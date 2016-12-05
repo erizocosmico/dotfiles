@@ -11,18 +11,20 @@ call neobundle#begin(expand('~/.config/nvim/bundle'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Add or remove your Bundles here:
+NeoBundle 'endel/vim-github-colorscheme'
 NeoBundle 'Shougo/deoplete.nvim'
 NeoBundle 'zchee/deoplete-go', {'build': {'unix': 'make'}}
 NeoBundle 'carlitux/deoplete-ternjs', { 'build': { 'mac': 'npm install -g tern', 'unix': 'npm install -g tern' }}
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'scrooloose/syntastic'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'sheerun/vim-polyglot'
+NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'bling/vim-airline'
+NeoBundle 'mhinz/vim-signify'
+NeoBundle 'vim-airline/vim-airline-themes'
 NeoBundle 'fatih/vim-go'
 NeoBundle 'ElmCast/elm-vim'
-NeoBundle 'endel/vim-github-colorscheme'
 NeoBundle 'luochen1990/rainbow'
 NeoBundle 'ctrlpvim/ctrlp.vim'
 
@@ -32,9 +34,9 @@ call neobundle#end()
 NeoBundleCheck
 
 set background=dark
-set termguicolors
 colorscheme github
-set guifont=Hack:h14
+set guifont=Hack:12
+set gfn=Hack\ 20
 set guioptions-=L
 set guioptions-=r
 set termguicolors
@@ -72,7 +74,8 @@ endif
 
 let mapleader = ","
 
-let g:polyglot_disabled = ['elm', 'go']
+let g:syntastic_disabled_filetypes=['html', 'sass']
+let g:polyglot_disabled = ['elm', 'go', 'sass', 'scss', 'html']
 let g:go_disable_autoinstall = 0
 let g:elm_format_autosave = 1
 
@@ -96,13 +99,16 @@ nmap <leader>y +y
 " Airline show always
 set laststatus=2
 
-" Indent
+" Custom ignored paths for ctrlp
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|node_modules)$'
+
+" let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'Indent
 filetype plugin indent on
 set expandtab
 
 " Custom indentations per file
-autocmd FileType html setlocal shiftwidth=4 tabstop=4 backspace=2
-autocmd FileType jsx,javascript,css,less,scss,sass,python,ruby setlocal shiftwidth=2 tabstop=2 backspace=2
+autocmd FileType jsx,javascript,html setlocal shiftwidth=4 tabstop=4 backspace=2
+autocmd FileType css,less,scss,sass,python,ruby setlocal shiftwidth=2 tabstop=2 backspace=2
 
 " Rainbow parenthesis
 let g:rainbow_active = 1
@@ -192,6 +198,10 @@ let g:tagbar_type_go = {
 " Add command to toggle tagbar
 nmap <C-x> :TagbarToggle<CR>
 
+" Change of buffers
+nmap <C-c> :bp<CR>
+nmap <C-v> :bn<CR>
+
 " Syntastic
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -204,8 +214,21 @@ let g:elm_format_autosave = 1
 let g:elm_syntastic_show_warnings = 1
 
 " Airline
-let g:airline_left_sep= '░'
-let g:airline_right_sep= '░'
+let g:airline_symbols = {}
+let g:airline_powerline_fonts = 1
+let g:airline_extensions = ['branch', 'tabline']
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = '·'
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#hunks#enabled=0
+let g:airline_inactive_collapse=1
+let g:airline#extensions#tabline#buffer_min_count = 2
+let g:airline_theme='wombat'
 
 " NerdTree
 map <C-z> :NERDTreeToggle<CR>
