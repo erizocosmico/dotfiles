@@ -112,6 +112,10 @@ autocmd FileType css,less,scss,sass,python,ruby setlocal shiftwidth=2 tabstop=2 
 
 " Rainbow parenthesis
 let g:rainbow_active = 1
+let g:rainbow_conf = {
+    \   'guifgs': ['darkcyan', 'magenta', 'darkyellow', 'red', 'grey', 'darkmagenta', 'darkyellow'],
+    \   'ctermfgs': ['darkcyan', 'magenta', 'darkyellow', 'red', 'grey', 'darkmagenta', 'darkyellow'],
+    \}
 
 " Open :GoDeclsDir with ctrl-g
 nmap <C-g> :GoDeclsDir<cr>
