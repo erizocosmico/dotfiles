@@ -33,7 +33,6 @@ call neobundle#end()
 
 NeoBundleCheck
 
-set background=dark
 colorscheme github
 set guifont=Hack:12
 set gfn=Hack\ 20
@@ -91,10 +90,25 @@ let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
 let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
 let g:deoplete#sources#go#use_cache = 1
 
+" Custom shortcuts
 nmap <leader>n :tabn<cr>
 nmap <leader>m :tabp<cr>
 nmap <leader>b :tabfirst<cr>
 nmap <leader>y +y
+imap <C-s> <esc>:w<cr>
+nmap <C-s> :w<cr>
+nmap <C-q> :q!<cr>
+imap <C-q> <esc>:q!<cr>
+" Delete block under cursor and start writing
+nmap <leader>db ViBd<esc><up>o
+" Delete inside parens bock and start writing
+nmap <leader>da Vibd<esc>i
+" Indent block under cursor
+nmap <leader>ib ViB><esc>
+" Unindent block under cursor
+nmap <leader>ub ViB<<esc>
+" Join next line erasing first space (it goes to end of current line)
+nmap <leader>j $J<del>
 
 " Airline show always
 set laststatus=2
@@ -112,6 +126,10 @@ autocmd FileType css,less,scss,sass,python,ruby setlocal shiftwidth=2 tabstop=2 
 
 " Rainbow parenthesis
 let g:rainbow_active = 1
+let g:rainbow_conf = {
+    \   'guifgs': ['darkcyan', 'magenta', 'darkyellow', 'red', 'grey', 'darkmagenta', 'darkyellow'],
+    \   'ctermfgs': ['darkcyan', 'magenta', 'darkyellow', 'red', 'grey', 'darkmagenta', 'darkyellow'],
+    \}
 
 " Open :GoDeclsDir with ctrl-g
 nmap <C-g> :GoDeclsDir<cr>
@@ -229,6 +247,20 @@ let g:airline#extensions#hunks#enabled=0
 let g:airline_inactive_collapse=1
 let g:airline#extensions#tabline#buffer_min_count = 2
 let g:airline_theme='wombat'
+let g:airline_section_y = ''
+let g:airline_mode_map = {
+      \ '__' : '-',
+      \ 'n'  : 'N',
+      \ 'i'  : 'I',
+      \ 'R'  : 'R',
+      \ 'c'  : 'C',
+      \ 'v'  : 'V',
+      \ 'V'  : 'V',
+      \ '' : 'V',
+      \ 's'  : 'S',
+      \ 'S'  : 'S',
+      \ '' : 'S',
+      \ }
 
 " NerdTree
 map <C-z> :NERDTreeToggle<CR>
