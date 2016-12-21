@@ -1,5 +1,5 @@
 if has('vim_starting')
-  " Required:
+" Required:
   set runtimepath+=~/.config/nvim/bundle/neobundle.vim/
 endif
 
@@ -10,7 +10,6 @@ call neobundle#begin(expand('~/.config/nvim/bundle'))
 " Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-" Add or remove your Bundles here:
 NeoBundle 'endel/vim-github-colorscheme'
 NeoBundle 'Shougo/deoplete.nvim'
 NeoBundle 'zchee/deoplete-go', {'build': {'unix': 'make'}}
@@ -64,6 +63,10 @@ set ruler
 set completeopt-=preview
 set lazyredraw
 set clipboard+=unnamedplus
+set gdefault
+set relativenumber
+set cursorline
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/bower_components/*,*/dist/*,*/cordova/*,*/public/spree/*
 
 " This enables us to undo files even if you exit Vim.
 if has('persistent_undo')
@@ -72,6 +75,7 @@ if has('persistent_undo')
 endif
 
 let mapleader = ","
+nmap <space> :
 
 let g:syntastic_disabled_filetypes=['html', 'sass']
 let g:polyglot_disabled = ['elm', 'go', 'sass', 'scss', 'html']
