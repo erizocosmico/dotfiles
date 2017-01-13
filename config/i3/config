@@ -31,6 +31,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Shift+Return exec konsole
 
 # kill focused window
 bindsym $mod+q kill
@@ -64,7 +65,7 @@ for_window [class=(?i)konsole] move window to workspace $tag4, focus
 assign [class=(?i)nautilus] $tag5
 for_window [class=(?i)nautilus] move window to workspace $tag5, focus
 
-# alternatively, you can use the cursor keys:
+# move between containers
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
@@ -81,6 +82,10 @@ bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
+
+# move between workspaces
+bindsym $mod+z workspace prev
+bindsym $mod+x workspace next
 
 # split in horizontal orientation
 bindsym $mod+h split h
@@ -171,6 +176,9 @@ bindsym $mod+b exec google-chrome
 # Open Telegram
 bindsym $mod+t exec telegram
 
+# Open Nautilus
+bindsym $mod+n exec nautilus
+
 exec --no-startup-id /usr/libexec/gnome-settings-daemon
 exec --no-startup-id xflux -l 40.4165 -g -3.70256
 exec --no-startup-id xbacklight -set 20
@@ -203,6 +211,7 @@ bindsym XF86AudioPrev exec playerctl previous
 set $accent #46899b
 set $borders #2b4046
 set $white #FFFFFF
+set $bg #1a1a1a
 
 client.focused $borders $accent $white 
 
@@ -210,7 +219,8 @@ bar {
     status_command py3status -c ~/.config/i3/i3status.conf
     position bottom
     colors { 
-        background #1a1a1a
+        separator $bg
+        background $bg
         focused_workspace $borders $accent $white
     }
 }
