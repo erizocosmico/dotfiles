@@ -198,17 +198,18 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-set $purple #33418e
+set $accent #46899b
+set $borders #2b4046
 set $white #FFFFFF
 
-client.focused $purple $purple $white 
+client.focused $borders $accent $white 
 
 bar {
     status_command py3status -c ~/.config/i3/i3status.conf
     position bottom
     colors { 
         background #1a1a1a
-        focused_workspace $purple $purple $white
+        focused_workspace $borders $accent $white
     }
 }
 exec --no-startup-id restart
