@@ -11,6 +11,7 @@ call neobundle#begin(expand('~/.config/nvim/bundle'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'endel/vim-github-colorscheme'
+NeoBundle 'fatih/vim-go'
 NeoBundle 'Shougo/deoplete.nvim'
 NeoBundle 'zchee/deoplete-go', {'build': {'unix': 'make'}}
 NeoBundle 'carlitux/deoplete-ternjs', { 'build': { 'mac': 'npm install -g tern', 'unix': 'npm install -g tern' }}
@@ -22,7 +23,6 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'mhinz/vim-signify'
 NeoBundle 'vim-airline/vim-airline-themes'
-NeoBundle 'fatih/vim-go'
 NeoBundle 'ElmCast/elm-vim'
 NeoBundle 'luochen1990/rainbow'
 NeoBundle 'ctrlpvim/ctrlp.vim'
