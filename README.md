@@ -53,4 +53,4 @@ After installing, start `nvim` once to install all plugins using NeoBundle. Exit
 sh ~/dotfiles/setup_npm
 ```
 
-* Sets the `~/npm-global` as the directory for global packages (avoids permission issues)
+* Sets the `~/.npm-global` as the directory for global packages (avoids permission issues)
