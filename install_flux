@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -e
+
+wget https://justgetflux.com/linux/xflux64.tgz
+tar zxvf xflux64.tgz
+rm xflux64.tgz
+mkdir -p ~/.local/bin
+mv xflux ~/.local/bin

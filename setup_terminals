@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -e
+
+echo "Installing konsole"
+sudo dnf install -y konsole
+
+echo "Installing theme for gnome terminal"
+wget https://raw.githubusercontent.com/denysdovhan/gnome-terminal-one/master/one-dark.sh
+sh one-dark.sh
+rm one-dark.sh
+
+echo 'Installing theme for konsole'
+mkdir -p ~/.local/share/konsole
+cp ./themes/OneDark.colorscheme ~/.local/share/konsole

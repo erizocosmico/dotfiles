@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -e
+
+git clone https://github.com/powerline/fonts
+sh ./fonts/install.sh
+rm -rf fonts
+
+echo 'Installing fonts'
+sudo dnf install -y fontawesome-fonts google-roboto-fonts open-sans-fonts
+
+echo 'Copying font config'
+sudo cp fonts.conf /etc/fonts/local.conf
+
+echo 'Erasing font cache'
+fc-cache -f -v > /dev/null

@@ -1,5 +1,5 @@
 set -gx GOPATH $HOME/go
-set -gx PATH $PATH $HOME/.local/bin $GOPATH/bin ~/.npm-global/bin
+set -gx PATH $PATH $HOME/.local/bin $GOPATH/bin ~/.npm-global/bin ~/.telegram
 set -gx CDPATH $CDPATH $GOPATH/src/github.com . .. $HOME
 
 set -g theme_date_format "+%a %H:%M"
