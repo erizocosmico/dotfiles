@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+set -e
+
+curl -s -L http://get.oh-my.fish | fish
+omf install bobthefish

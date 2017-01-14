@@ -1,0 +1,6 @@
+[submodule "dotbot"]
+	path = dotbot
+	url = https://github.com/anishathalye/dotbot
+[submodule "powerline"]
+	path = powerline
+	url = https://github.com/powerline/powerline

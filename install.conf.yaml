@@ -1,0 +1,28 @@
+- clean: ['~']
+
+- link:
+    ~/.gitconfig:
+        path: .gitconfig
+        create: true
+        relink: false
+        force: false
+    ~/.config/i3:
+        path: config/i3/
+        create: true
+        relink: false
+        force: true
+    ~/.tmux.conf:
+        path: .tmux.conf
+        create: true
+        relink: false
+        force: true
+    ~/.config/nvim:
+        path: config/nvim/
+        create: true
+        relink: false
+        force: true
+    ~/.config/fish:
+        path: config/fish/
+        create: true
+        relink: false
+        force: true

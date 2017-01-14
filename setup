@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+source ./setup_npm
+source ./setup_fish
+source ./setup_nvim

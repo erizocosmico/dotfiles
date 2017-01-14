@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -e
+
+echo 'Installing neobundle...'
+curl -s https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh > ~/neobundle_install.sh
+sh ~/neobundle_install.sh > /dev/null
+rm ~/neobundle_install.sh > /dev/null
+echo 'Neobundle installed...'
+
+echo 'Installing plugins...'
+pip install --upgrade --user neovim > /dev/null
+go get -u github.com/nsf/gocode > /dev/null
+echo 'Plugins installed'
+
+echo "All setup! Do not forget to run :UpdateRemotePlugins in neovim"
