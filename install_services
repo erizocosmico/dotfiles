@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -e
+
+sudo cp ./services/mbp.service /etc/systemd/system/mbp.service
+sudo cp ./services/i3lock.service /etc/systemd/system/i3lock.service
+
+sudo systemctl enable --now mbp
+sudo systemctl enable --now i3lock

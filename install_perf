@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -e
+
+sudo dnf install -y tlp tlp-rdw
+sudo tlp start
+
+sudo dnf install -y automake gcc gcc-c++ glib-devel dbus-glib-devel libxml2-devel
+git clone https://github.com/01org/thermal_daemon
+cd thermal_daemon
+./autogen.sh
+./configure prefix=/usr
+make
+sudo make install
+cd ..
+rm -rf thermal_daemon
