@@ -95,6 +95,14 @@ let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const
 let g:deoplete#sources#go#use_cache = 1
 
 " Custom shortcuts
+nmap <C-right> <C-w>l
+nmap <C-up> <C-w>k
+nmap <C-left> <C-w>h
+nmap <C-down> <C-w>j
+imap <C-right> <esc><C-w>l
+imap <C-up> <esc><C-w>k
+imap <C-left> <esc><C-w>h
+imap <C-down> <esc><C-w>j
 nmap <leader>n :tabn<cr>
 nmap <leader>m :tabp<cr>
 nmap <leader>b :tabfirst<cr>
