@@ -60,6 +60,8 @@ assign [class=(?i)telegram] $tag3
 for_window [class=(?i)telegram] move window to workspace $tag3, focus
 assign [class=(?i)slack] $tag3
 for_window [class=(?i)slack] move window to workspace $tag3, focus
+assign [class=(?i)discord] $tag3
+for_window [class=(?i)discord] move window to workspace $tag3, focus
 #workspace: DEV
 assign [class=(?i)konsole] $tag4
 for_window [class=(?i)konsole] move window to workspace $tag4, focus
