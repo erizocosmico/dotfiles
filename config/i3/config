@@ -193,9 +193,13 @@ bindsym $mod+m exec spotify --force-device-scale-factor=2
 exec --no-startup-id /usr/libexec/gnome-settings-daemon
 exec --no-startup-id xflux -l 40.4165 -g -3.70256
 exec --no-startup-id xbacklight -set 20
+# Default dpi is 200
 exec --no-startup-id xrandr --dpi 200
+# Make trackpad enable tap to click and natural scroll
 exec --no-startup-id xinput set-prop "bcm5974"  "libinput Natural Scrolling Enabled" 1
 exec --no-startup-id xinput set-prop "bcm5974" "libinput Tapping Enabled" 1
+# Turn off red light in macbook pro audio jack
+exec --no-startup-id amixer -D hw:1 set 'IEC958 Default PCM',0 off
 
 # Take screenshots
 bindsym --release $mod+p exec scrot -s $HOME/screenshot_`date +%Y-%m-%d_%H:%M:%S`.png
