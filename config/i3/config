@@ -48,6 +48,7 @@ set $tag2 " 2  term "
 set $tag3 " 3  chat "
 set $tag4 " 4  dev "
 set $tag5 " 5  fs "
+set $tag6 " 6  music "
 
 #workspace: WEB
 assign [class=(?i)google-chrome] $tag1
@@ -68,6 +69,9 @@ for_window [class=(?i)konsole] move window to workspace $tag4, focus
 #workspace: FS
 assign [class=(?i)nautilus] $tag5
 for_window [class=(?i)nautilus] move window to workspace $tag5, focus
+#workspace: MUSIC
+assign [class=(?i)spotify] $tag6
+for_window [class=(?i)spotify] move window to workspace $tag6, focus
 
 # move between containers
 bindsym $mod+Left focus left
@@ -123,7 +127,7 @@ bindsym $mod+2 workspace $tag2
 bindsym $mod+3 workspace $tag3
 bindsym $mod+4 workspace $tag4
 bindsym $mod+5 workspace $tag5
-bindsym $mod+6 workspace 6
+bindsym $mod+6 workspace $tag6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
@@ -135,7 +139,7 @@ bindsym $mod+Shift+2 move container to workspace $tag2
 bindsym $mod+Shift+3 move container to workspace $tag3
 bindsym $mod+Shift+4 move container to workspace $tag4
 bindsym $mod+Shift+5 move container to workspace $tag5
-bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+6 move container to workspace $tag6
 bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
