@@ -183,6 +183,9 @@ bindsym $mod+t exec telegram
 # Open Nautilus
 bindsym $mod+n exec nautilus
 
+# Open spotify with fix for hidpi
+bindsym $mod+m exec spotify --force-device-scale-factor=2
+
 exec --no-startup-id /usr/libexec/gnome-settings-daemon
 exec --no-startup-id xflux -l 40.4165 -g -3.70256
 exec --no-startup-id xbacklight -set 20
@@ -207,10 +210,10 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
 
 # Media player controls
-bindsym XF86AudioPlay exec playerctl play
-bindsym XF86AudioPause exec playerctl pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioPlay exec qdbus org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+bindsym XF86AudioPause exec qdbus org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+bindsym XF86AudioNext exec qdbus org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+bindsym XF86AudioPrev exec qdbus org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
 
 set $accent #073642
 set $borders #2b4046
