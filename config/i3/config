@@ -45,8 +45,8 @@ bindsym $mod+d exec dmenu_run
 #
 set $tag1 " 1  web "
 set $tag2 " 2  term "
-set $tag3 " 3  chat "
-set $tag4 " 4  dev "
+set $tag3 " 3  dev "
+set $tag4 " 4  chat "
 set $tag5 " 5  fs "
 set $tag6 " 6  music "
 
@@ -57,15 +57,15 @@ for_window [class=(?i)google-chrome] move window to workspace $tag1, focus
 assign [class=(?i)gnome-terminal] $tag2
 for_window [class=(?i)gnome-terminal] move window to workspace $tag2, focus
 #workspace: CHAT
-assign [class=(?i)telegram] $tag3
-for_window [class=(?i)telegram] move window to workspace $tag3, focus
-assign [class=(?i)slack] $tag3
-for_window [class=(?i)slack] move window to workspace $tag3, focus
-assign [class=(?i)discord] $tag3
-for_window [class=(?i)discord] move window to workspace $tag3, focus
+assign [class=(?i)telegram] $tag4
+for_window [class=(?i)telegram] move window to workspace $tag4, focus
+assign [class=(?i)slack] $tag4
+for_window [class=(?i)slack] move window to workspace $tag4, focus
+assign [class=(?i)discord] $tag4
+for_window [class=(?i)discord] move window to workspace $tag4, focus
 #workspace: DEV
-assign [class=(?i)konsole] $tag4
-for_window [class=(?i)konsole] move window to workspace $tag4, focus
+assign [class=(?i)konsole] $tag3
+for_window [class=(?i)konsole] move window to workspace $tag3, focus
 #workspace: FS
 assign [class=(?i)nautilus] $tag5
 for_window [class=(?i)nautilus] move window to workspace $tag5, focus
