@@ -133,8 +133,8 @@ filetype plugin indent on
 set expandtab
 
 " Custom indentations per file
-autocmd FileType jsx,javascript,html setlocal shiftwidth=4 tabstop=4 backspace=2
-autocmd FileType css,less,scss,sass,python,ruby setlocal shiftwidth=2 tabstop=2 backspace=2
+autocmd FileType html setlocal shiftwidth=4 tabstop=4 backspace=2
+autocmd FileType css,less,scss,sass,python,ruby,js,jsx,javascript setlocal shiftwidth=2 tabstop=2 backspace=2
 
 " Rainbow parenthesis
 let g:rainbow_active = 1
