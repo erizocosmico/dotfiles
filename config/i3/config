@@ -225,13 +225,14 @@ bindsym XF86AudioPause exec qdbus org.mpris.MediaPlayer2.spotify /org/mpris/Medi
 bindsym XF86AudioNext exec qdbus org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
 bindsym XF86AudioPrev exec qdbus org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
 
-set $accent #073642
+set $accent #2c3e50
+set $accentws #2980b9
 set $borders #2b4046
 set $white #FFFFFF
-set $bg #002b36
-set $bgws #001e26
+set $bg #2c3e50
+set $bgws #34495e
 set $textaccent #eee8d5
-set $inactive #839496
+set $inactive #95a5a6
 
 client.focused $accent $accent $textaccent 
 
@@ -243,9 +244,10 @@ bar {
         background $bg
         inactive_workspace $bgws $bgws $inactive
         active_workspace $bgws $bgws $inactive
-        focused_workspace $accent $accent $textaccent
+        focused_workspace $accentws $accentws $textaccent
     }
 }
+
 exec --no-startup-id restart
 
 # Switch to workspace with urgent window automatically
