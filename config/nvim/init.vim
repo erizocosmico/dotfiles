@@ -26,6 +26,7 @@ NeoBundle 'vim-airline/vim-airline-themes'
 NeoBundle 'ElmCast/elm-vim'
 NeoBundle 'luochen1990/rainbow'
 NeoBundle 'ctrlpvim/ctrlp.vim'
+NeoBundle 'othree/html5.vim'
 
 " Required:
 call neobundle#end()
@@ -111,6 +112,7 @@ imap <C-s> <esc>:w<cr>
 nmap <C-s> :w<cr>
 nmap <C-q> :q!<cr>
 imap <C-q> <esc>:q!<cr>
+nmap <C-n> :cnext<cr>
 " Delete block under cursor and start writing
 nmap <leader>db ViBd<esc><up>o
 " Delete inside parens bock and start writing
@@ -141,6 +143,10 @@ let g:rainbow_active = 1
 let g:rainbow_conf = {
     \   'guifgs': ['darkcyan', 'magenta', 'darkyellow', 'red', 'grey', 'darkmagenta', 'darkyellow'],
     \   'ctermfgs': ['darkcyan', 'magenta', 'darkyellow', 'red', 'grey', 'darkmagenta', 'darkyellow'],
+    \   'separately': {
+    \       '*': {},
+    \       'html': 0,
+    \   }
     \}
 
 " Open :GoDeclsDir with ctrl-g
