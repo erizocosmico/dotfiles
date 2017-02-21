@@ -226,7 +226,7 @@ bindsym XF86AudioNext exec qdbus org.mpris.MediaPlayer2.spotify /org/mpris/Media
 bindsym XF86AudioPrev exec qdbus org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
 
 set $accent #2c3e50
-set $accentws #2980b9
+set $accentws #1976D2
 set $borders #2b4046
 set $white #FFFFFF
 set $bg #2c3e50
@@ -242,8 +242,8 @@ bar {
     colors { 
         separator $bg
         background $bg
-        inactive_workspace $bgws $bgws $inactive
-        active_workspace $bgws $bgws $inactive
+        inactive_workspace $bg $bg $inactive
+        active_workspace $bg $bg $inactive
         focused_workspace $accentws $accentws $textaccent
     }
 }

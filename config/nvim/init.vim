@@ -27,6 +27,10 @@ NeoBundle 'ElmCast/elm-vim'
 NeoBundle 'luochen1990/rainbow'
 NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'othree/html5.vim'
+NeoBundle 'editorconfig/editorconfig-vim'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'chrisbra/NrrwRgn'
+NeoBundle 'mhartington/oceanic-next'
 
 " Required:
 call neobundle#end()
@@ -46,7 +50,10 @@ filetype plugin on
 filetype plugin indent on
 set encoding=utf-8
 set ttyfast
-set autoread
+" Auto saving
+au FocusLost * :wa " Save after losing focus
+set autowrite " write when switching files
+set autoread  " read automagically from disk
 set autoindent
 set backspace=indent,eol,start
 set incsearch
@@ -77,6 +84,10 @@ endif
 
 let mapleader = ","
 nmap <space> :
+
+" Use tab instead of % to match bracket pairs
+nnoremap <tab> %
+vnoremap <tab> %
 
 let g:syntastic_disabled_filetypes=['html', 'sass']
 let g:polyglot_disabled = ['elm', 'go', 'sass', 'scss', 'html']
@@ -264,7 +275,7 @@ let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#hunks#enabled=0
 let g:airline_inactive_collapse=1
 let g:airline#extensions#tabline#buffer_min_count = 2
-let g:airline_theme='wombat'
+let g:airline_theme='oceanicnext'
 let g:airline_section_y = ''
 let g:airline_mode_map = {
       \ '__' : '-',
