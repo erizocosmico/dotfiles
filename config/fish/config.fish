@@ -7,3 +7,7 @@ set -g theme_date_format "+%a %H:%M"
 function gocov
         go test -coverprofile=cover.out $argv[1]; and go tool cover -html=cover.out; and rm cover.out
 end
+
+function docker-purge
+        bash -c 'docker rmi $(docker images -f dangling=true -q)' > /dev/null
+end
