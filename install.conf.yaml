@@ -6,6 +6,11 @@
         create: true
         relink: false
         force: false
+    ~/.gitignore:
+        path: gitignore
+        create: true
+        relink: true
+        force: true
     ~/.config/i3:
         path: config/i3/
         create: true

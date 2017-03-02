@@ -1,3 +1,5 @@
 [user]
 	email = hi@mvader.me
 	name = Miguel Molina
+[core]
+	excludesfile = ~/.gitignore
