@@ -164,6 +164,9 @@ let g:rainbow_conf = {
 nmap <C-g> :GoDeclsDir<cr>
 imap <C-g> <esc>:<C-u>GoDeclsDir<cr>
 
+set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
+
+
 " Go syntax highlighting
 let g:go_highlight_functions = 1  
 let g:go_highlight_methods = 1  
@@ -208,6 +211,7 @@ augroup go
   autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
   autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
   autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
+  autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
 augroup END
 
 " Enable goimports instead of go fmt
