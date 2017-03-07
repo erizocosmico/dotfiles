@@ -192,7 +192,7 @@ bindsym $mod+m exec spotify --force-device-scale-factor=2
 
 exec --no-startup-id /usr/libexec/gnome-settings-daemon
 exec --no-startup-id xflux -l 40.4165 -g -3.70256
-exec --no-startup-id xbacklight -set 20
+exec --no-startup-id xbacklight -set 35
 # Default dpi is 200
 exec --no-startup-id xrandr --dpi 200
 # Make trackpad enable tap to click and natural scroll
