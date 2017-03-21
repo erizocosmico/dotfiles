@@ -31,6 +31,7 @@ NeoBundle 'editorconfig/editorconfig-vim'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'chrisbra/NrrwRgn'
 NeoBundle 'mhartington/oceanic-next'
+NeoBundle 'dodie/vim-disapprove-deep-indentation'
 
 " Required:
 call neobundle#end()
@@ -75,6 +76,9 @@ set gdefault
 set relativenumber
 set cursorline
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/bower_components/*,*/dist/*,*/cordova/*,*/public/spree/*
+
+let g:LookOfDisapprovalTabTreshold=6
+let g:LookOfDisapprovalSpaceTreshold=(&tabstop*6)
 
 " This enables us to undo files even if you exit Vim.
 if has('persistent_undo')
@@ -147,7 +151,8 @@ set expandtab
 
 " Custom indentations per file
 autocmd FileType html setlocal shiftwidth=4 tabstop=4 backspace=2
-autocmd FileType css,less,scss,sass,python,ruby,js,jsx,javascript setlocal shiftwidth=2 tabstop=2 backspace=2
+autocmd FileType css,less,scss,sass,python,ruby,js,jsx,javascript,dart,typescript setlocal shiftwidth=2 tabstop=2 backspace=2
+autocmd FileType make setlocal noexpandtab
 
 " Rainbow parenthesis
 let g:rainbow_active = 1
@@ -163,9 +168,6 @@ let g:rainbow_conf = {
 " Open :GoDeclsDir with ctrl-g
 nmap <C-g> :GoDeclsDir<cr>
 imap <C-g> <esc>:<C-u>GoDeclsDir<cr>
-
-set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
-
 
 " Go syntax highlighting
 let g:go_highlight_functions = 1  
@@ -211,7 +213,6 @@ augroup go
   autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
   autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
   autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
-  autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
 augroup END
 
 " Enable goimports instead of go fmt
