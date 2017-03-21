@@ -205,8 +205,11 @@ augroup go
 
   " :GoDef but opens in a vertical split
   autocmd FileType go nmap <Leader>v <Plug>(go-def-vertical)
+
   " :GoDef but opens in a horizontal split
   autocmd FileType go nmap <Leader>s <Plug>(go-def-split)
+
+  autocmd FileType go nmap <Leader>e <Plug>(go-rename)
 
   " :GoAlternate  commands :A, :AV, :AS and :AT
   autocmd FileType go nmap <leader>a :call go#alternate#Switch(0, 'edit')<cr>
