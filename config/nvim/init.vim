@@ -32,6 +32,7 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'chrisbra/NrrwRgn'
 NeoBundle 'mhartington/oceanic-next'
 NeoBundle 'dodie/vim-disapprove-deep-indentation'
+NeoBundle 'joukevandermaas/vim-ember-hbs'
 
 " Required:
 call neobundle#end()
@@ -94,7 +95,7 @@ nnoremap <tab> %
 vnoremap <tab> %
 
 let g:syntastic_disabled_filetypes=['html', 'sass']
-let g:polyglot_disabled = ['elm', 'go', 'sass', 'scss', 'html']
+let g:polyglot_disabled = ['elm', 'go', 'sass', 'scss', 'html', 'hbs']
 let g:go_disable_autoinstall = 0
 let g:elm_format_autosave = 1
 

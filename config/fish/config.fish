@@ -12,5 +12,9 @@ function gocov
 end
 
 function docker-purge
-        bash -c 'docker rmi $(docker images -f dangling=true -q)' > /dev/null
+        bash -c 'docker rmi $(docker images -f dangling=true -q) --force' > /dev/null
+end
+
+function docker-purge-ps
+        bash -c 'docker rm $(docker ps --all -q) --force'
 end
