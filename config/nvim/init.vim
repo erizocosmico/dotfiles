@@ -94,8 +94,8 @@ nmap <space> :
 nnoremap <tab> %
 vnoremap <tab> %
 
-let g:syntastic_disabled_filetypes=['html', 'sass']
-let g:polyglot_disabled = ['elm', 'go', 'sass', 'scss', 'html', 'hbs']
+let g:syntastic_disabled_filetypes=['html', 'sass', 'markdown']
+let g:polyglot_disabled = ['elm', 'go', 'sass', 'scss', 'html', 'hbs', 'markdown']
 let g:go_disable_autoinstall = 0
 let g:elm_format_autosave = 1
 
@@ -151,7 +151,7 @@ filetype plugin indent on
 set expandtab
 
 " Custom indentations per file
-autocmd FileType html setlocal shiftwidth=4 tabstop=4 backspace=2
+autocmd FileType html,elm setlocal shiftwidth=4 tabstop=4 backspace=2
 autocmd FileType css,less,scss,sass,python,ruby,js,jsx,javascript,dart,typescript setlocal shiftwidth=2 tabstop=2 backspace=2
 autocmd FileType make setlocal noexpandtab
 

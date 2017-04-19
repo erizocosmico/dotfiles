@@ -63,8 +63,8 @@ for_window [class=(?i)slack] move window to workspace $tag4, focus
 assign [class=(?i)discord] $tag4
 for_window [class=(?i)discord] move window to workspace $tag4, focus
 #workspace: DEV
-# assign [class=(?i)konsole] $tag3
-# for_window [class=(?i)konsole] move window to workspace $tag3, focus
+assign [class=(?i)code] $tag3
+for_window [class=(?i)code] move window to workspace $tag3, focus
 #workspace: FS
 assign [class=(?i)nautilus] $tag5
 for_window [class=(?i)nautilus] move window to workspace $tag5, focus
