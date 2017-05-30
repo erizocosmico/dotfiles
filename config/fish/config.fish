@@ -1,5 +1,5 @@
 set -gx GOPATH $HOME/go
-set -gx PATH $PATH $HOME/.local/bin $GOPATH/bin ~/.npm-global/bin ~/.cargo/bin ~/.telegram
+set -gx PATH $PATH $HOME/.local/bin $GOPATH/bin ~/.npm-global/bin ~/.cargo/bin ~/.telegram ~/sbt/bin
 set -gx CDPATH $CDPATH . .. $GOPATH/src/github.com $GOPATH/src/gopkg.in $GOPATH/src/srcd.works $HOME
 
 set -g theme_date_format "+%a %H:%M"
@@ -17,4 +17,9 @@ end
 
 function docker-purge-ps
         bash -c 'docker rm $(docker ps --all -q) --force'
+end
+
+function docker-rmi
+        echo "/var/lib/docker/image/devicemapper/imagedb/*/sha256/$argv[1]*";
+        sudo rm -rf "/var/lib/docker/image/devicemapper/imagedb/*/sha256/$argv[1]*";
 end

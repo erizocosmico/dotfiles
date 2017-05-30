@@ -10,7 +10,7 @@ call neobundle#begin(expand('~/.config/nvim/bundle'))
 " Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-NeoBundle 'endel/vim-github-colorscheme'
+NeoBundle 'erizocosmico/vim-color-golang'
 NeoBundle 'fatih/vim-go'
 NeoBundle 'Shougo/deoplete.nvim'
 NeoBundle 'zchee/deoplete-go', {'build': {'unix': 'make'}}
@@ -39,7 +39,7 @@ call neobundle#end()
 
 NeoBundleCheck
 
-colorscheme github
+colorscheme golang
 set guifont=Hack:12
 set gfn=Hack\ 20
 set guioptions-=L
@@ -139,6 +139,8 @@ nmap <leader>ib ViB><esc>
 nmap <leader>ub ViB<<esc>
 " Join next line erasing first space (it goes to end of current line)
 nmap <leader>j $J<del>
+nmap <leader>s :split<cr>
+nmap <leader>v :vsplit<cr>
 
 " Airline show always
 set laststatus=2
@@ -163,6 +165,7 @@ let g:rainbow_conf = {
     \   'separately': {
     \       '*': {},
     \       'html': 0,
+    \       'go': 0,
     \   }
     \}
 
@@ -205,17 +208,17 @@ augroup go
   autocmd FileType go nmap <Leader>f <Plug>(go-test-func)
 
   " :GoDef but opens in a vertical split
-  autocmd FileType go nmap <Leader>v <Plug>(go-def-vertical)
+  autocmd FileType go nmap <Leader>dv <Plug>(go-def-vertical)
 
   " :GoDef but opens in a horizontal split
-  autocmd FileType go nmap <Leader>s <Plug>(go-def-split)
+  autocmd FileType go nmap <Leader>ds <Plug>(go-def-split)
 
   autocmd FileType go nmap <Leader>e <Plug>(go-rename)
 
   " :GoAlternate  commands :A, :AV, :AS and :AT
   autocmd FileType go nmap <leader>a :call go#alternate#Switch(0, 'edit')<cr>
-  autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
-  autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
+  autocmd Filetype go nmap <leader>av :call go#alternate#Switch(0, 'vsplit')<cr>
+  autocmd Filetype go nmap <leader>as :call go#alternate#Switch(0, 'split')<cr>
   autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 augroup END
 
