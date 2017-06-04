@@ -10,7 +10,7 @@ call neobundle#begin(expand('~/.config/nvim/bundle'))
 " Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-NeoBundle 'endel/vim-github-colorscheme'
+NeoBundle 'erizocosmico/vim-color-golang'
 NeoBundle 'fatih/vim-go'
 NeoBundle 'Shougo/deoplete.nvim'
 NeoBundle 'zchee/deoplete-go', {'build': {'unix': 'make'}}
@@ -31,6 +31,8 @@ NeoBundle 'editorconfig/editorconfig-vim'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'chrisbra/NrrwRgn'
 NeoBundle 'mhartington/oceanic-next'
+NeoBundle 'dodie/vim-disapprove-deep-indentation'
+NeoBundle 'joukevandermaas/vim-ember-hbs'
 
 " Required:
 call neobundle#end()
@@ -76,6 +78,9 @@ set relativenumber
 set cursorline
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/bower_components/*,*/dist/*,*/cordova/*,*/public/spree/*
 
+let g:LookOfDisapprovalTabTreshold=6
+let g:LookOfDisapprovalSpaceTreshold=(&tabstop*6)
+
 " This enables us to undo files even if you exit Vim.
 if has('persistent_undo')
   set undofile
@@ -89,8 +94,8 @@ nmap <space> :
 nnoremap <tab> %
 vnoremap <tab> %
 
-let g:syntastic_disabled_filetypes=['html', 'sass']
-let g:polyglot_disabled = ['elm', 'go', 'sass', 'scss', 'html']
+let g:syntastic_disabled_filetypes=['html', 'sass', 'markdown']
+let g:polyglot_disabled = ['elm', 'go', 'sass', 'scss', 'html', 'hbs', 'markdown']
 let g:go_disable_autoinstall = 0
 let g:elm_format_autosave = 1
 
@@ -134,6 +139,8 @@ nmap <leader>ib ViB><esc>
 nmap <leader>ub ViB<<esc>
 " Join next line erasing first space (it goes to end of current line)
 nmap <leader>j $J<del>
+nmap <leader>s :split<cr>
+nmap <leader>v :vsplit<cr>
 
 " Airline show always
 set laststatus=2
@@ -146,8 +153,9 @@ filetype plugin indent on
 set expandtab
 
 " Custom indentations per file
-autocmd FileType html setlocal shiftwidth=4 tabstop=4 backspace=2
-autocmd FileType ocaml,css,less,scss,sass,python,ruby,js,jsx,javascript setlocal shiftwidth=2 tabstop=2 backspace=2
+autocmd FileType html,elm setlocal shiftwidth=4 tabstop=4 backspace=2
+autocmd FileType ocaml,css,less,scss,sass,python,ruby,js,jsx,javascript,dart,typescript setlocal shiftwidth=2 tabstop=2 backspace=2
+autocmd FileType make setlocal noexpandtab
 
 " Rainbow parenthesis
 let g:rainbow_active = 1
@@ -157,6 +165,7 @@ let g:rainbow_conf = {
     \   'separately': {
     \       '*': {},
     \       'html': 0,
+    \       'go': 0,
     \   }
     \}
 
@@ -199,17 +208,17 @@ augroup go
   autocmd FileType go nmap <Leader>f <Plug>(go-test-func)
 
   " :GoDef but opens in a vertical split
-  autocmd FileType go nmap <Leader>v <Plug>(go-def-vertical)
+  autocmd FileType go nmap <Leader>dv <Plug>(go-def-vertical)
 
   " :GoDef but opens in a horizontal split
-  autocmd FileType go nmap <Leader>s <Plug>(go-def-split)
+  autocmd FileType go nmap <Leader>ds <Plug>(go-def-split)
 
   autocmd FileType go nmap <Leader>e <Plug>(go-rename)
 
   " :GoAlternate  commands :A, :AV, :AS and :AT
   autocmd FileType go nmap <leader>a :call go#alternate#Switch(0, 'edit')<cr>
-  autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
-  autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
+  autocmd Filetype go nmap <leader>av :call go#alternate#Switch(0, 'vsplit')<cr>
+  autocmd Filetype go nmap <leader>as :call go#alternate#Switch(0, 'split')<cr>
   autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 augroup END
 

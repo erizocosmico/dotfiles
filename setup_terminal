@@ -6,4 +6,3 @@ echo "Installing theme for gnome terminal"
 wget https://raw.githubusercontent.com/denysdovhan/gnome-terminal-one/master/one-dark.sh
 sh one-dark.sh
 rm one-dark.sh
-
