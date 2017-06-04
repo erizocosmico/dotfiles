@@ -14,3 +14,5 @@ end
 function docker-purge
         bash -c 'docker rmi $(docker images -f dangling=true -q)' > /dev/null
 end
+
+source "$HOME/.opam/opam-init/init.fish" > /dev/null 2> /dev/null; or true

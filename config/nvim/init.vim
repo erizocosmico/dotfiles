@@ -37,7 +37,7 @@ call neobundle#end()
 
 NeoBundleCheck
 
-colorscheme github
+colorscheme golang
 set guifont=Hack:12
 set gfn=Hack\ 20
 set guioptions-=L
@@ -147,7 +147,7 @@ set expandtab
 
 " Custom indentations per file
 autocmd FileType html setlocal shiftwidth=4 tabstop=4 backspace=2
-autocmd FileType css,less,scss,sass,python,ruby,js,jsx,javascript setlocal shiftwidth=2 tabstop=2 backspace=2
+autocmd FileType ocaml,css,less,scss,sass,python,ruby,js,jsx,javascript setlocal shiftwidth=2 tabstop=2 backspace=2
 
 " Rainbow parenthesis
 let g:rainbow_active = 1
