@@ -154,7 +154,7 @@ set expandtab
 
 " Custom indentations per file
 autocmd FileType html,elm setlocal shiftwidth=4 tabstop=4 backspace=2
-autocmd FileType css,less,scss,sass,python,ruby,js,jsx,javascript,dart,typescript setlocal shiftwidth=2 tabstop=2 backspace=2
+autocmd FileType ocaml,css,less,scss,sass,python,ruby,js,jsx,javascript,dart,typescript setlocal shiftwidth=2 tabstop=2 backspace=2
 autocmd FileType make setlocal noexpandtab
 
 " Rainbow parenthesis

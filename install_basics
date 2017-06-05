@@ -2,4 +2,4 @@
 
 set -e
 
-sudo dnf install -y go npm neovim fish ctags
+sudo dnf install -y go npm neovim fish ctags gnome-tweak-tool breeze-icon-theme

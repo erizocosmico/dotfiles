@@ -23,3 +23,5 @@ function docker-rmi
         echo "/var/lib/docker/image/devicemapper/imagedb/*/sha256/$argv[1]*";
         sudo rm -rf "/var/lib/docker/image/devicemapper/imagedb/*/sha256/$argv[1]*";
 end
+
+source "$HOME/.opam/opam-init/init.fish" > /dev/null 2> /dev/null; or true
