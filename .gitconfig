@@ -5,3 +5,12 @@
 	excludesfile = ~/.gitignore
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[alias]
+	dad = !curl https://icanhazdadjoke.com && git add
+	pushme = push -u me HEAD
+	undo = reset --soft HEAD~
+	wip = !git add -A && git commit -am 'wip'
+	c = commit -am
+        p = push
+	b = checkout -b
+	cd = checkout
