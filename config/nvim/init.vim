@@ -75,7 +75,7 @@ set lazyredraw
 set clipboard+=unnamedplus
 set gdefault
 set relativenumber
-set cursorline
+set nocursorline
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/bower_components/*,*/dist/*,*/cordova/*,*/public/spree/*
 
 let g:LookOfDisapprovalTabTreshold=6

@@ -30,7 +30,7 @@ font pango:monospace, Awesome 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec tilix
 
 # kill focused window
 bindsym $mod+q kill

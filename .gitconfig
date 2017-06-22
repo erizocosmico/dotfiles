@@ -1,5 +1,5 @@
 [user]
-	email = hi@mvader.me
+	email = miguel@erizocosmi.co
 	name = Miguel Molina
 [core]
 	excludesfile = ~/.gitignore
@@ -10,7 +10,9 @@
 	pushme = push -u me HEAD
 	undo = reset --soft HEAD~
 	wip = !git add -A && git commit -am 'wip'
-	c = commit -am
+        all = add -A
+	c = commit -s -am
         p = push
 	b = checkout -b
 	cd = checkout
+	a = commit -s --amend -C HEAD
