@@ -55,6 +55,8 @@ for_window [class=(?i)google-chrome] move window to workspace $tag1, focus
 #workspace: TERM
 assign [class=(?i)gnome-terminal] $tag2
 for_window [class=(?i)gnome-terminal] move window to workspace $tag2, focus
+assign [class=(?i)tilix] $tag2
+for_window [class=(?i)tilix] move window to workspace $tag2, focus
 #workspace: CHAT
 assign [class=(?i)telegram] $tag4
 for_window [class=(?i)telegram] move window to workspace $tag4, focus

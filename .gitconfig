@@ -13,6 +13,7 @@
         all = add -A
 	c = commit -s -am
         p = push
+        pf = push -f
 	b = checkout -b
 	cd = checkout
 	a = commit -s --amend -C HEAD

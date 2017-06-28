@@ -33,13 +33,16 @@ NeoBundle 'chrisbra/NrrwRgn'
 NeoBundle 'mhartington/oceanic-next'
 NeoBundle 'dodie/vim-disapprove-deep-indentation'
 NeoBundle 'joukevandermaas/vim-ember-hbs'
+NeoBundle 'dracula/vim'
+NeoBundle 'editorconfig/editorconfig-vim'
+NeoBundle 'csscomb/vim-csscomb'
 
 " Required:
 call neobundle#end()
 
 NeoBundleCheck
 
-colorscheme golang
+colorscheme dracula
 set guifont=Hack:12
 set gfn=Hack\ 20
 set guioptions-=L
@@ -156,6 +159,9 @@ set expandtab
 autocmd FileType html,elm setlocal shiftwidth=4 tabstop=4 backspace=2
 autocmd FileType ocaml,css,less,scss,sass,python,ruby,js,jsx,javascript,dart,typescript setlocal shiftwidth=2 tabstop=2 backspace=2
 autocmd FileType make setlocal noexpandtab
+
+" Automatically run CSSComb on save
+autocmd BufWritePre,FileWritePre *.css,*.less,*.scss,*.sass silent! :CSScomb
 
 " Rainbow parenthesis
 let g:rainbow_active = 1
