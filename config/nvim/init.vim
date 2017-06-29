@@ -160,9 +160,6 @@ autocmd FileType html,elm setlocal shiftwidth=4 tabstop=4 backspace=2
 autocmd FileType ocaml,css,less,scss,sass,python,ruby,js,jsx,javascript,dart,typescript setlocal shiftwidth=2 tabstop=2 backspace=2
 autocmd FileType make setlocal noexpandtab
 
-" Automatically run CSSComb on save
-autocmd BufWritePre,FileWritePre *.css,*.less,*.scss,*.sass silent! :CSScomb
-
 " Rainbow parenthesis
 let g:rainbow_active = 1
 let g:rainbow_conf = {
@@ -237,13 +234,7 @@ let g:neoformat_enabled_less = ['csscomb']
 let g:neoformat_enabled_javascript = ['prettiereslint']
 let g:neoformat_enabled_typescript = ['prettier']
 
-autocmd BufWritePre *.css Neoformat
-autocmd BufWritePre *.scss Neoformat
-autocmd BufWritePre *.less Neoformat
-autocmd BufWritePre *.js Neoformat
-autocmd BufWritePre *.ts Neoformat
-autocmd BufWritePre *.ml Neoformat
-autocmd BufWritePre *.mli Neoformat
+autocmd FileWritePre,BufWritePre *.css,*.less,*.scss,*.js,*.ts,*.ml,*.mli Neoformat
 
 " TagBar
 let g:tagbar_type_go = {  
