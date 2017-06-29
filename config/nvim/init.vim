@@ -35,7 +35,6 @@ NeoBundle 'dodie/vim-disapprove-deep-indentation'
 NeoBundle 'joukevandermaas/vim-ember-hbs'
 NeoBundle 'dracula/vim'
 NeoBundle 'editorconfig/editorconfig-vim'
-NeoBundle 'csscomb/vim-csscomb'
 NeoBundle 'sbdchd/neoformat'
 
 " Required:
