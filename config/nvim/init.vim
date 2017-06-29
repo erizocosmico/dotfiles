@@ -36,6 +36,7 @@ NeoBundle 'joukevandermaas/vim-ember-hbs'
 NeoBundle 'dracula/vim'
 NeoBundle 'editorconfig/editorconfig-vim'
 NeoBundle 'csscomb/vim-csscomb'
+NeoBundle 'sbdchd/neoformat'
 
 " Required:
 call neobundle#end()
@@ -231,6 +232,20 @@ augroup END
 " Enable goimports instead of go fmt
 let g:go_fmt_command = "goimports"
 
+let g:neoformat_enabled_css = ['csscomb']
+let g:neoformat_enabled_scss = ['csscomb']
+let g:neoformat_enabled_less = ['csscomb']
+let g:neoformat_enabled_javascript = ['prettiereslint']
+let g:neoformat_enabled_typescript = ['prettier']
+
+autocmd BufWritePre *.css Neoformat
+autocmd BufWritePre *.scss Neoformat
+autocmd BufWritePre *.less Neoformat
+autocmd BufWritePre *.js Neoformat
+autocmd BufWritePre *.ts Neoformat
+autocmd BufWritePre *.ml Neoformat
+autocmd BufWritePre *.mli Neoformat
+
 " TagBar
 let g:tagbar_type_go = {  
     \ 'ctagstype' : 'go',
@@ -282,10 +297,10 @@ let g:elm_syntastic_show_warnings = 1
 let g:airline_symbols = {}
 let g:airline_powerline_fonts = 1
 let g:airline_extensions = ['branch', 'tabline']
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = '|'
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = '|'
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = '·'
