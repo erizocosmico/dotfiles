@@ -36,6 +36,7 @@ NeoBundle 'joukevandermaas/vim-ember-hbs'
 NeoBundle 'dracula/vim'
 NeoBundle 'editorconfig/editorconfig-vim'
 NeoBundle 'sbdchd/neoformat'
+NeoBundle 'ntpeters/vim-better-whitespace'
 
 " Required:
 call neobundle#end()
@@ -177,10 +178,10 @@ nmap <C-g> :GoDeclsDir<cr>
 imap <C-g> <esc>:<C-u>GoDeclsDir<cr>
 
 " Go syntax highlighting
-let g:go_highlight_functions = 1  
-let g:go_highlight_methods = 1  
-let g:go_highlight_structs = 1  
-let g:go_highlight_operators = 1  
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
 augroup go
@@ -228,16 +229,22 @@ augroup END
 " Enable goimports instead of go fmt
 let g:go_fmt_command = "goimports"
 
+autocmd FileType javascript setlocal formatprg=prettier\ --stdin\ --parser\ flow\ --single-quote
+
 let g:neoformat_enabled_css = ['csscomb']
 let g:neoformat_enabled_scss = ['csscomb']
 let g:neoformat_enabled_less = ['csscomb']
 let g:neoformat_enabled_javascript = ['prettiereslint']
 let g:neoformat_enabled_typescript = ['prettier']
+" Use formatprg when available
+let g:neoformat_try_formatprg = 1
 
 autocmd FileWritePre,BufWritePre *.css,*.less,*.scss,*.js,*.ts,*.ml,*.mli Neoformat
 
+autocmd BufWritePre,FileWritePre * StripWhitespace
+
 " TagBar
-let g:tagbar_type_go = {  
+let g:tagbar_type_go = {
     \ 'ctagstype' : 'go',
     \ 'kinds'     : [
         \ 'p:package',
