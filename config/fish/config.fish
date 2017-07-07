@@ -3,6 +3,11 @@ set -gx PATH $PATH $HOME/.local/bin $GOPATH/bin ~/.npm-global/bin ~/.telegram
 set -gx CDPATH $CDPATH . .. $GOPATH/src/github.com $GOPATH/src/gopkg.in $GOPATH/src/srcd.works $HOME
 
 set -g theme_date_format "+%a %H:%M"
+set -g theme_powerline_fonts no
+set -g theme_display_vi yes
+set -g theme_display_git yes
+set -g theme_display_git_untracked yes
+set -g theme_display_git_ahead_verbose yes
 
 alias vi "nvim"
 alias vim "nvim"

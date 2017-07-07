@@ -1,6 +1,7 @@
 [user]
 	email = miguel@erizocosmi.co
 	name = Miguel Molina
+	signingkey = 2C836326
 [core]
 	excludesfile = ~/.gitignore
 [url "git@github.com:"]
@@ -17,3 +18,8 @@
 	b = checkout -b
 	cd = checkout
 	a = commit -s --amend -C HEAD
+        addme = "!sh -c \"git remote add me git@github.com:erizocosmico/$1.git\" -"
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
