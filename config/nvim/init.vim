@@ -44,8 +44,6 @@ call neobundle#end()
 NeoBundleCheck
 
 colorscheme dracula
-set guifont=Hack:12
-set gfn=Hack\ 20
 set guioptions-=L
 set guioptions-=r
 set termguicolors
