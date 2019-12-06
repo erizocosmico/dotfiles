@@ -1,0 +1,23 @@
+{
+    "workbench.colorTheme": "GitHub Plus",
+    "editor.fontLigatures": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.fontSize": 14,
+    "editor.fontFamily": "Cascadia Code",
+    "editor.fontWeight": "500",
+    "python.linting.mypyEnabled": true,
+    "python.pythonPath": "python3",
+    "python.linting.mypyArgs": [
+        "--follow-imports=silent",
+        "--show-column-numbers",
+        "--check-untyped-defs"
+    ],
+    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.fontFamily": "Cascadia Code",
+    "terminal.integrated.shell.linux": "fish",
+    "terminal.integrated.shell.osx": "fish",
+    "editor.lineHeight": 20,
+    "go.formatTool": "goimports",
+    "editor.minimap.enabled": false
+}
