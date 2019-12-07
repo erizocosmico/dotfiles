@@ -276,3 +276,5 @@ bindsym Control+Print exec gnome-screenshot -i
 
 # Kill focused window
 bindsym $mod+q kill
+
+exec sleep 1 && i3-msg restart
