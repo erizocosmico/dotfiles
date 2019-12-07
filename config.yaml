@@ -1,0 +1,9 @@
+.Xresources:~/.Xresources
+.gitconfig:~/.gitconfig
+.config/i3/config:~/.config/i3/config
+.config/dunst:~/.config/dunst
+.config/Code/settings.json:~/.config/Code/User/settings.json
+.config/kitty:~/.config/kitty
+.config/rofi:~/.config/rofi
+.config/fish:~/.config/fish
+fonts.conf:/etc/fonts/local.conf
