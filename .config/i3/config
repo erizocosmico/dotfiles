@@ -24,7 +24,7 @@ font pango:Roboto 12
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -c 1F2337 --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -64,7 +64,7 @@ bindsym $mod+d exec rofi -show drun -show-icons -icon-theme Numix -theme arc-red
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
-bindsym $mod+i focus up
+bindsym $mod+u focus up
 bindsym $mod+ntilde focus right
 
 # alternatively, you can use the cursor keys:
@@ -203,7 +203,7 @@ set $ws4 "<span color='black' size='0'>04</span>   "
 set $ws5 "<span color='black' size='0'>05</span>  "
 set $ws6 "<span color='black' size='0'>06</span>  "
 set $ws7 "<span color='black' size='0'>07</span>  "
-set $ws8 "<span color='black' size='0'>08</span> 8 "
+set $ws8 "<span color='black' size='0'>08</span>  "
 set $ws9 "<span color='black' size='0'>09</span> 9 "
 set $ws10 "<span color='black' size='0'>10</span> 10 "
 
@@ -221,6 +221,8 @@ for_window [class=(?i)slack] move window to workspace $ws4, focus
 #workspace: DEV
 assign [class=(?i)code] $ws3
 for_window [class=(?i)code] move window to workspace $ws3, focus
+assign [class=(?i)idea] $ws3
+for_window [class=(?i)idea] move window to workspace $ws3, focus
 #workspace: FS
 assign [class=(?i)nautilus] $ws5
 for_window [class=(?i)nautilus] move window to workspace $ws5, focus
@@ -230,6 +232,11 @@ for_window [class=(?i)spotify] move window to workspace $ws6, focus
 # workspace: EMAIL
 assign [class=(?i)mailspring] $ws7
 for_window [class=(?i)mailspring] move window to workspace $ws7, focus
+# workspace: VIDEOCONF
+assign [class=(?i)zoom] $ws8
+for_window [class=(?i)zoom] move window to workspace $ws8, focus
+assign [class=(?i)skype] $ws8
+for_window [class=(?i)skype] move window to workspace $ws8, focus
 
 bindsym $mod+1 workspace $ws1; layout tabbed
 bindsym $mod+2 workspace $ws2; layout splith
@@ -243,16 +250,16 @@ bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number $ws1
-bindsym $mod+Shift+2 move container to workspace number $ws2
-bindsym $mod+Shift+3 move container to workspace number $ws3
-bindsym $mod+Shift+4 move container to workspace number $ws4
-bindsym $mod+Shift+5 move container to workspace number $ws5
-bindsym $mod+Shift+6 move container to workspace number $ws6
-bindsym $mod+Shift+7 move container to workspace number $ws7
-bindsym $mod+Shift+8 move container to workspace number $ws8
-bindsym $mod+Shift+9 move container to workspace number $ws9
-bindsym $mod+Shift+0 move container to workspace number $ws10
+bindsym $mod+Shift+1 move window to workspace $ws1
+bindsym $mod+Shift+2 move window to workspace $ws2
+bindsym $mod+Shift+3 move window to workspace $ws3
+bindsym $mod+Shift+4 move window to workspace $ws4
+bindsym $mod+Shift+5 move window to workspace $ws5
+bindsym $mod+Shift+6 move window to workspace $ws6
+bindsym $mod+Shift+7 move window to workspace $ws7
+bindsym $mod+Shift+8 move window to workspace $ws8
+bindsym $mod+Shift+9 move window to workspace $ws9
+bindsym $mod+Shift+0 move window to workspace $ws10
 
 # shortcuts
 
@@ -268,8 +275,11 @@ bindsym $mod+n exec nautilus
 # Open Spotify
 bindsym $mod+s exec spotify --force-device-scale-factor=1.5
 
+# Open IntelliJ
+bindsym $mod+i exec intellij-idea-community
+
 # Lock screen
-bindsym $mod+l exec i3lock -c 000000 && systemctl suspend
+bindsym $mod+l exec i3lock -c 1F2337 && systemctl suspend
 
 # Screenshot
 bindsym Control+Print exec gnome-screenshot -i

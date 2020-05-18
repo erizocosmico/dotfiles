@@ -12,13 +12,15 @@
 	undo = reset --soft HEAD~
 	wip = !git add -A && git commit -am 'wip'
         all = add -A
-	c = commit -s -am
+	c = commit -s -S -am
         p = push
         pf = push -f
 	b = checkout -b
 	cd = checkout
-	a = commit -s --amend -C HEAD
-        addme = "!sh -c \"git remote add me git@github.com:erizocosmico/$1.git\" -"
+	a = commit -s -S --amend -C HEAD
+	cm = commit -s -S
+        addme = "!sh -c \"git remote add me git@github.com:erizocosmico/$(basename $(pwd)).git\" -"
+	po = push -u origin HEAD
 [commit]
 	gpgsign = true
 [tag]
