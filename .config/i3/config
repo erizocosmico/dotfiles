@@ -30,6 +30,9 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -c 1F2337 --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
+# Set background
+exec --no-startup-id feh --bg-scale ~/.config/i3/wallpaper.png
+
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -155,8 +158,8 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # class                 border  bground text    indicator child_border
-client.focused          #000000 #000000 #FFAF8E #CD390E   #000000
-client.focused_inactive #333333 #5F676A #FFFFFF #484E50   #5F676A
+client.focused          #000000 #000000 #fc9886 #CD390E   #000000
+client.focused_inactive #000000 #000000 #FFFFFF #484E50   #000000
 client.unfocused        #333333 #222222 #888888 #292D2E   #222222
 client.urgent           #2F343A #BA2402 #FFFFFF #B23305   #AD1802
 client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
@@ -171,7 +174,7 @@ bar {
 		statusline #FFFFFF
 		separator  #000000
 
-		focused_workspace  #000000 #000000 #F48700
+		focused_workspace  #000000 #000000 #e8745f
 		active_workspace   #000000 #000000 #FFFFFF
 		inactive_workspace #000000 #000000 #888888
 		urgent_workspace   #2F343A #C72802 #FFFFFF
@@ -182,7 +185,7 @@ bar {
         status_command ~/.barry/barry
 }
 
-for_window [class=".*"] title_format "   <span size='x-small' weight='bold'>%title</span>"
+for_window [class=".*"] title_format "  <span size='x-small' weight='bold'>%title</span>"
 
 # Init scripts
 
@@ -204,7 +207,7 @@ set $ws5 "<span color='black' size='0'>05</span>  "
 set $ws6 "<span color='black' size='0'>06</span>  "
 set $ws7 "<span color='black' size='0'>07</span>  "
 set $ws8 "<span color='black' size='0'>08</span>  "
-set $ws9 "<span color='black' size='0'>09</span> 9 "
+set $ws9 "<span color='black' size='0'>09</span>  "
 set $ws10 "<span color='black' size='0'>10</span> 10 "
 
 #workspace: WEB
@@ -229,6 +232,8 @@ for_window [class=(?i)nautilus] move window to workspace $ws5, focus
 # workspace: MUSIC
 assign [class=(?i)spotify] $ws6
 for_window [class=(?i)spotify] move window to workspace $ws6, focus
+assign [class=(?i)rhythmbox] $ws6
+for_window [class=(?i)rhythmbox] move window to workspace $ws6, focus
 # workspace: EMAIL
 assign [class=(?i)mailspring] $ws7
 for_window [class=(?i)mailspring] move window to workspace $ws7, focus
@@ -237,6 +242,11 @@ assign [class=(?i)zoom] $ws8
 for_window [class=(?i)zoom] move window to workspace $ws8, focus
 assign [class=(?i)skype] $ws8
 for_window [class=(?i)skype] move window to workspace $ws8, focus
+# workspace: GAMES
+assign [class=(?i)steam] $ws9
+for_window [class=(?i)steam] move window to workspace $ws9, focus
+assign [class=(?i)discord] $ws9
+for_window [class=(?i)discord] move window to workspace $ws9, focus
 
 bindsym $mod+1 workspace $ws1; layout tabbed
 bindsym $mod+2 workspace $ws2; layout splith
@@ -274,6 +284,9 @@ bindsym $mod+n exec nautilus
 
 # Open Spotify
 bindsym $mod+s exec spotify --force-device-scale-factor=1.5
+
+# Open steam
+bindsym $mod+y exec env GDK_SCALE=2 steam
 
 # Open IntelliJ
 bindsym $mod+i exec intellij-idea-community

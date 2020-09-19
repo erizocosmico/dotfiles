@@ -1,22 +1,24 @@
 {
-    "workbench.colorTheme": "GitHub Plus",
-    "editor.fontLigatures": true,
-    "editor.formatOnPaste": true,
-    "editor.formatOnSave": true,
-    "editor.fontSize": 14,
-    "editor.fontFamily": "Cascadia Code",
-    "editor.fontWeight": "500",
-    "terminal.integrated.fontSize": 14,
-    "terminal.integrated.fontFamily": "Cascadia Code",
-    "terminal.integrated.shell.linux": "fish",
-    "terminal.integrated.shell.osx": "fish",
-    "editor.lineHeight": 20,
-    "go.formatTool": "goimports",
-    "editor.minimap.enabled": false,
-    "window.zoomLevel": 0,
-    "go.useLanguageServer": true,
-    "vim.handleKeys": {
-        "<C-c>": false,
-        "<C-v>": false
-    }
+  "workbench.colorTheme": "GitHub Plus",
+  "editor.fontLigatures": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.fontSize": 14,
+  "editor.fontFamily": "Cascadia Code",
+  "editor.fontWeight": "500",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontFamily": "Cascadia Code",
+  "terminal.integrated.shell.linux": "fish",
+  "terminal.integrated.shell.osx": "fish",
+  "editor.lineHeight": 20,
+  "go.formatTool": "goimports",
+  "editor.minimap.enabled": false,
+  "window.zoomLevel": 0,
+  "go.useLanguageServer": true,
+  "vim.handleKeys": {
+    "<C-c>": false,
+    "<C-v>": false,
+    "<C-x>": false,
+    "<C-a>": false
+  }
 }

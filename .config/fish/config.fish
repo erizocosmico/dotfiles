@@ -16,16 +16,3 @@ function docker-purge-ps
         bash -c 'docker rm $(docker ps --all -q) --force'
 end
 
-function monitor-off
-	xrandr --output DP-1 --off
-end
-
-function monitor-on
-	xrandr --output DP-1 --auto --above eDP-1
-end
-
-function setup-mouse
-	xinput --set-prop 15 320 -0.6 # speed scroll
-	xinput --set-prop 15 308 1 # natural scroll
-	xinput --set-prop 15 322 1 # left-handed
-end
